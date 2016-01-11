@@ -12,7 +12,7 @@ var capitolHill = {
   minCustPerHour: 32,
   maxCustPerHour: 48,
   poundsPerCup: .05,
-  hours: ['8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'],
+  hours: ['6:00AM', '7:00AM','8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'],
   getCustThisHour: function(){
     var customerNumber = Math.floor(Math.random()*(this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour);
     //console.log('getCustThisHour ' + customerNumber);
@@ -40,7 +40,7 @@ var capitolHill = {
     container.appendChild(title);
     container.appendChild(list);
 
-    console.log(this.name + ': ');
+    //console.log(this.name + ': ');
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
@@ -59,7 +59,7 @@ var pikePlace = {
   minCustPerHour: 14,
   maxCustPerHour: 55,
   poundsPerCup: .05,
-  hours: ['8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'],
+  hours: ['6:00AM', '7:00AM','8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'],
   getCustThisHour: function(){
     var customerNumber = Math.floor(Math.random()*(this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour);
     //console.log('getCustThisHour ' + customerNumber);
@@ -87,7 +87,7 @@ var pikePlace = {
     container.appendChild(title);
     container.appendChild(list);
 
-    console.log(this.name + ': ');
+    //console.log(this.name + ': ');
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
@@ -106,7 +106,7 @@ var seattlePubLib = {
   minCustPerHour: 49,
   maxCustPerHour: 75,
   poundsPerCup: .05,
-  hours: ['8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'],
+  hours: ['6:00AM', '7:00AM','8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'],
   getCustThisHour: function(){
     var customerNumber = Math.floor(Math.random()*(this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour);
     //console.log('getCustThisHour ' + customerNumber);
@@ -134,7 +134,7 @@ var seattlePubLib = {
     container.appendChild(title);
     container.appendChild(list);
 
-    console.log(this.name + ': ');
+    //console.log(this.name + ': ');
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
@@ -153,7 +153,7 @@ var southLakeUnion = {
   minCustPerHour: 35,
   maxCustPerHour: 88,
   poundsPerCup: .05,
-  hours: ['8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'],
+  hours: ['6:00AM', '7:00AM','8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'],
   getCustThisHour: function(){
     var customerNumber = Math.floor(Math.random()*(this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour);
     //console.log('getCustThisHour ' + customerNumber);
@@ -181,7 +181,7 @@ var southLakeUnion = {
     container.appendChild(title);
     container.appendChild(list);
 
-    console.log(this.name + ': ');
+    //console.log(this.name + ': ');
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
@@ -200,7 +200,7 @@ var seatac = {
   minCustPerHour: 68,
   maxCustPerHour: 124,
   poundsPerCup: .05,
-  hours: ['8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'],
+  hours: ['6:00AM', '7:00AM','8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'],
   getCustThisHour: function(){
     var customerNumber = Math.floor(Math.random()*(this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour);
     //console.log('getCustThisHour ' + customerNumber);
@@ -228,7 +228,7 @@ var seatac = {
     container.appendChild(title);
     container.appendChild(list);
 
-    console.log(this.name + ': ');
+    //console.log(this.name + ': ');
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
@@ -247,7 +247,7 @@ var website = {
   minCustPerHour: 3,
   maxCustPerHour: 6,
   poundsPerCup: .05,
-  hours: ['8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'],
+  hours: ['6:00AM', '7:00AM', '8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'],
   getCustThisHour: function(){
     var customerNumber = Math.floor(Math.random()*(this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour);
     //console.log('getCustThisHour ' + customerNumber);
@@ -276,7 +276,7 @@ var website = {
     container.appendChild(list);
 
 
-    console.log(this.name + ': ');
+    //console.log(this.name + ': ');
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]';
@@ -289,16 +289,11 @@ var website = {
 }
 
 
-
+function writeActivityLog(myLocations){
+  for (var i = 0; i < myLocations.length; i++) {
+    myLocations[i].summarizeDay();
+  }
+}
 
 var locations = [capitolHill, pikePlace, seattlePubLib, seatac, website];
-// capitolHill.summarizeDay();
-// pikePlace.summarizeDay();
-// seattlePubLib.summarizeDay();
-// seatac.summarizeDay();
-// website.summarizeDay();
-
-for (var i = 0; i < locations.length; i++) {
-  console.log(i);
-  locations[i].summarizeDay();
-}
+writeActivityLog(locations);
