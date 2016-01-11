@@ -4,7 +4,7 @@
   src: url('https://fonts.googleapis.com/css?family=Open+Sans');
 }
 
-div {
+.logContainer {
   border: 1px black solid;
   background-color: #993300;
   width: 33%;
@@ -12,7 +12,14 @@ div {
   text-align: center;
 }
 
-body{
+.locationListing {
+  border: 1px black solid;
+  background-color: #993300;
+  height: 300px;
+  text-align: center;
+}
+
+body {
   background-color: #440000;
   color: #FFFFCC;
   font-family: Open Sans;

@@ -29,7 +29,7 @@ var capitolHill = {
   },
   summarizeDay: function(){
     var container = document.createElement('div');
-    // container.className = 'logContainer';
+    container.className = 'logContainer';
     var title = document.createElement('h3');
     title.textContent = this.name + ': ';
     // title.className = 'shopTitle';
@@ -76,7 +76,7 @@ var pikePlace = {
   },
   summarizeDay: function(){
     var container = document.createElement('div');
-    // container.className = 'logContainer';
+    container.className = 'logContainer';
     var title = document.createElement('h3');
     title.textContent = this.name + ': ';
     // title.className = 'shopTitle';
@@ -123,7 +123,7 @@ var seattlePubLib = {
   },
   summarizeDay: function(){
     var container = document.createElement('div');
-    // container.className = 'logContainer';
+    container.className = 'logContainer';
     var title = document.createElement('h3');
     title.textContent = this.name + ': ';
     // title.className = 'shopTitle';
@@ -170,7 +170,7 @@ var southLakeUnion = {
   },
   summarizeDay: function(){
     var container = document.createElement('div');
-    // container.className = 'logContainer';
+    container.className = 'logContainer';
     var title = document.createElement('h3');
     title.textContent = this.name + ': ';
     // title.className = 'shopTitle';
@@ -217,7 +217,7 @@ var seatac = {
   },
   summarizeDay: function(){
     var container = document.createElement('div');
-    // container.className = 'logContainer';
+    container.className = 'logContainer';
     var title = document.createElement('h3');
     title.textContent = this.name + ': ';
     // title.className = 'shopTitle';
@@ -264,7 +264,7 @@ var website = {
   },
   summarizeDay: function(){
     var container = document.createElement('div');
-    // container.className = 'logContainer';
+    container.className = 'logContainer';
     var title = document.createElement('h3');
     title.textContent = this.name + ': ';
     // title.className = 'shopTitle';
