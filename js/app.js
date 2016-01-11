@@ -28,11 +28,26 @@ var capitolHill = {
     return [totalLbs, customerNumber, cups, lbsInCups, lbsToGo];
   },
   summarizeDay: function(){
+    var container = document.createElement('div');
+    // container.className = 'logContainer';
+    var title = document.createElement('h3');
+    title.textContent = this.name + ': ';
+    // title.className = 'shopTitle';
+    var list = document.createElement('ul');
+    list.className = 'activityLog';
+
+    document.body.appendChild(container);
+    container.appendChild(title);
+    container.appendChild(list);
+
     console.log(this.name + ': ');
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
-      console.log(output);
+      var listItem = document.createElement('li');
+      listItem.textContent = output;
+      list.appendChild(listItem);
+      //console.log(output);
     }
   }
 }
@@ -60,11 +75,26 @@ var pikePlace = {
     return [totalLbs, customerNumber, cups, lbsInCups, lbsToGo];
   },
   summarizeDay: function(){
+    var container = document.createElement('div');
+    // container.className = 'logContainer';
+    var title = document.createElement('h3');
+    title.textContent = this.name + ': ';
+    // title.className = 'shopTitle';
+    var list = document.createElement('ul');
+    list.className = 'activityLog';
+
+    document.body.appendChild(container);
+    container.appendChild(title);
+    container.appendChild(list);
+
     console.log(this.name + ': ');
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
-      console.log(output);
+      var listItem = document.createElement('li');
+      listItem.textContent = output;
+      list.appendChild(listItem);
+      //console.log(output);
     }
   }
 }
@@ -92,11 +122,26 @@ var seattlePubLib = {
     return [totalLbs, customerNumber, cups, lbsInCups, lbsToGo];
   },
   summarizeDay: function(){
+    var container = document.createElement('div');
+    // container.className = 'logContainer';
+    var title = document.createElement('h3');
+    title.textContent = this.name + ': ';
+    // title.className = 'shopTitle';
+    var list = document.createElement('ul');
+    list.className = 'activityLog';
+
+    document.body.appendChild(container);
+    container.appendChild(title);
+    container.appendChild(list);
+
     console.log(this.name + ': ');
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
-      console.log(output);
+      var listItem = document.createElement('li');
+      listItem.textContent = output;
+      list.appendChild(listItem);
+      //console.log(output);
     }
   }
 }
@@ -124,11 +169,26 @@ var southLakeUnion = {
     return [totalLbs, customerNumber, cups, lbsInCups, lbsToGo];
   },
   summarizeDay: function(){
+    var container = document.createElement('div');
+    // container.className = 'logContainer';
+    var title = document.createElement('h3');
+    title.textContent = this.name + ': ';
+    // title.className = 'shopTitle';
+    var list = document.createElement('ul');
+    list.className = 'activityLog';
+
+    document.body.appendChild(container);
+    container.appendChild(title);
+    container.appendChild(list);
+
     console.log(this.name + ': ');
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
-      console.log(output);
+      var listItem = document.createElement('li');
+      listItem.textContent = output;
+      list.appendChild(listItem);
+      //console.log(output);
     }
   }
 }
@@ -156,11 +216,26 @@ var seatac = {
     return [totalLbs, customerNumber, cups, lbsInCups, lbsToGo];
   },
   summarizeDay: function(){
+    var container = document.createElement('div');
+    // container.className = 'logContainer';
+    var title = document.createElement('h3');
+    title.textContent = this.name + ': ';
+    // title.className = 'shopTitle';
+    var list = document.createElement('ul');
+    list.className = 'activityLog';
+
+    document.body.appendChild(container);
+    container.appendChild(title);
+    container.appendChild(list);
+
     console.log(this.name + ': ');
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
-      console.log(output);
+      var listItem = document.createElement('li');
+      listItem.textContent = output;
+      list.appendChild(listItem);
+      //console.log(output);
     }
   }
 }
@@ -188,14 +263,33 @@ var website = {
     return [totalLbs, customerNumber, cups, lbsInCups, lbsToGo];
   },
   summarizeDay: function(){
+    var container = document.createElement('div');
+    // container.className = 'logContainer';
+    var title = document.createElement('h3');
+    title.textContent = this.name + ': ';
+    // title.className = 'shopTitle';
+    var list = document.createElement('ul');
+    list.className = 'activityLog';
+
+    document.body.appendChild(container);
+    container.appendChild(title);
+    container.appendChild(list);
+
+
     console.log(this.name + ': ');
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]';
-      console.log(output);
+      var listItem = document.createElement('li');
+      listItem.textContent = output;
+      list.appendChild(listItem);
+      // console.log(output);
     }
   }
 }
+
+
+
 
 var locations = [capitolHill, pikePlace, seattlePubLib, seatac, website];
 // capitolHill.summarizeDay();
