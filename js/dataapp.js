@@ -1,5 +1,5 @@
 function shopLocation (listInput){
-  this.name = listInput[0];
+  this.locName = listInput[0];
   this.cupsPerCust = listInput[1];
   this.lbsPerCust = listInput[2];
   this.minCustPerHour = listInput[3];
@@ -22,40 +22,38 @@ function shopLocation (listInput){
   };
   this.renderActivityLog = function(){
     var headingsList = ['Time', 'Total Lbs', 'Number of Customers', 'Number of Cups', 'Lbs to-Go']
-    var container = document.createElement('div');
-    container.className = 'logContainer';
-    var title = document.createElement('h3');
-    title.textContent = this.name + ': ';
-    document.body.appendChild(container);
-    container.appendChild(title);
+    var containerEl = document.createElement('div');
+    containerEl.className = 'logContainer';
+    var titleEl = document.createElement('h3');
+    titleEl.textContent = this.locName + ': ';
+    document.body.appendChild(containerEl);
+    containerEl.appendChild(titleEl);
     var table = document.createElement('table');
     table.className = 'activityLog';
-    var headRow = document.createElement('tr');
-    container.appendChild(table);
-    table.appendChild(headRow);
+    var headRowEl = document.createElement('tr');
+    containerEl.appendChild(table);
+    table.appendChild(headRowEl);
     //set up head row
     for (var i = 0; i < headingsList.length; i++){
-      var tableHead = document.createElement('th')
-      tableHead.textContent = headingsList[i];
-      headRow.appendChild(tableHead);
+      var tableHeadEl = document.createElement('th')
+      tableHeadEl.textContent = headingsList[i];
+      headRowEl.appendChild(tableHeadEl);
     }
     //set up table body
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       lbsThisHour.unshift(this.hours[i]);
-      var logRow = document.createElement('tr');
-      table.appendChild(logRow);
+      var logRowEl = document.createElement('tr');
+      table.appendChild(logRowEl);
 
       for (var j = 0; j < lbsThisHour.length; j++ ){
-          tableItem = document.createElement('td');
-          tableItem.textContent = lbsThisHour[j];
-          logRow.appendChild(tableItem);
+          tableItemEl = document.createElement('td');
+          tableItemEl.textContent = lbsThisHour[j];
+          logRowEl.appendChild(tableItemEl);
       }
     }
   }
 }
-
-
 
 var locations = [];
 locations[0] = ['Capitol Hill', 3.2, .4, 32, 48];
