@@ -73,7 +73,18 @@ function writeActivityLog(myLocations){
 }
 writeActivityLog(locations);
 
+function onSubmit(){
+  //console.log('working');
+  var newName = document.getElementById('newLocationName').value;
+  var newMin = +document.getElementById('newLocationMin').value;
+  var newMax = +document.getElementById('newLocationMax').value;
+  var newCups = +document.getElementById('newLocationCups').value;
+  var newLbs = +document.getElementById('newLocationLbs').value;
 
+  newLocation = new shopLocation([newName, newCups, newLbs, newMin, newMax,]);
+  newLocation.renderActivityLog();
+  locations.push(newLocation);
+}
 
 // var capitolHill = {
 //   name: 'Capitol Hill',

@@ -17,8 +17,18 @@
   background-color: #993300;
 }
 
+.addForm {
+  border: 1px black solid;
+  background-color: #993300;
+}
+
 body {
   background-color: #440000;
   color: #FFFFCC;
   font-family: Open Sans;
+}
+
+.addForm p {
+  display: inline-block;
+  margin: 5px;
 }
