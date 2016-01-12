@@ -1,1 +1,24 @@
 /*css here*/
+@font-face{
+  font-family: 'Open Sans', sans-serif;
+  src: url('https://fonts.googleapis.com/css?family=Open+Sans');
+}
+
+.logContainer {
+  border: 1px black solid;
+  background-color: #993300;
+  width: 33%;
+  display: inline-block;
+  text-align: center;
+}
+
+.indexHeading {
+  border: 1px black solid;
+  background-color: #993300;
+}
+
+body {
+  background-color: #440000;
+  color: #FFFFCC;
+  font-family: Open Sans;
+}
