@@ -12,11 +12,9 @@
   text-align: center;
 }
 
-.locationListing {
+.indexHeading {
   border: 1px black solid;
   background-color: #993300;
-  height: 300px;
-  text-align: center;
 }
 
 body {

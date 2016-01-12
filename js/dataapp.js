@@ -1,5 +1,5 @@
 // Javascript here
-
+//
 // var min=1;
 // var max=10;
 // console.log(0*(max-min +1) + min);
@@ -25,29 +25,39 @@ var capitolHill = {
     var lbsToGo = Math.floor(this.lbsPerCust * customerNumber);
     var totalLbs = lbsToGo + lbsInCups;
     //console.log('getLbsThisHour: ' + totalLbs);
-    return [totalLbs, customerNumber, cups, lbsInCups, lbsToGo];
+    return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   },
   summarizeDay: function(){
+    var headingsList = ['Time', 'Total Lbs', 'Number of Customers', 'Number of Cups', 'Lbs to-Go']
     var container = document.createElement('div');
     container.className = 'logContainer';
     var title = document.createElement('h3');
     title.textContent = this.name + ': ';
-    // title.className = 'shopTitle';
-    var list = document.createElement('ul');
-    list.className = 'activityLog';
-
     document.body.appendChild(container);
     container.appendChild(title);
-    container.appendChild(list);
-
-    //console.log(this.name + ': ');
+    var table = document.createElement('table');
+    table.className = 'activityLog';
+    var headRow = document.createElement('tr');
+    container.appendChild(table);
+    table.appendChild(headRow);
+    //set up head row
+    for (var i = 0; i < headingsList.length; i++){
+      var tableHead = document.createElement('th')
+      tableHead.textContent = headingsList[i];
+      headRow.appendChild(tableHead);
+    }
+    //set up table body
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
-      var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
-      var listItem = document.createElement('li');
-      listItem.textContent = output;
-      list.appendChild(listItem);
-      //console.log(output);
+      lbsThisHour.unshift(this.hours[i]);
+      var logRow = document.createElement('tr');
+      table.appendChild(logRow);
+
+      for (var j = 0; j < lbsThisHour.length; j++ ){
+          tableItem = document.createElement('td');
+          tableItem.textContent = lbsThisHour[j];
+          logRow.appendChild(tableItem);
+      }
     }
   }
 }
@@ -72,29 +82,39 @@ var pikePlace = {
     var lbsToGo = Math.floor(this.lbsPerCust * customerNumber);
     var totalLbs = lbsToGo + lbsInCups;
     //console.log('getLbsThisHour: ' + totalLbs);
-    return [totalLbs, customerNumber, cups, lbsInCups, lbsToGo];
+    return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   },
   summarizeDay: function(){
+    var headingsList = ['Time', 'Total Lbs', 'Number of Customers', 'Number of Cups', 'Lbs to-Go']
     var container = document.createElement('div');
     container.className = 'logContainer';
     var title = document.createElement('h3');
     title.textContent = this.name + ': ';
-    // title.className = 'shopTitle';
-    var list = document.createElement('ul');
-    list.className = 'activityLog';
-
     document.body.appendChild(container);
     container.appendChild(title);
-    container.appendChild(list);
-
-    //console.log(this.name + ': ');
+    var table = document.createElement('table');
+    table.className = 'activityLog';
+    var headRow = document.createElement('tr');
+    container.appendChild(table);
+    table.appendChild(headRow);
+    //set up head row
+    for (var i = 0; i < headingsList.length; i++){
+      var tableHead = document.createElement('th')
+      tableHead.textContent = headingsList[i];
+      headRow.appendChild(tableHead);
+    }
+    //set up table body
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
-      var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
-      var listItem = document.createElement('li');
-      listItem.textContent = output;
-      list.appendChild(listItem);
-      //console.log(output);
+      lbsThisHour.unshift(this.hours[i]);
+      var logRow = document.createElement('tr');
+      table.appendChild(logRow);
+
+      for (var j = 0; j < lbsThisHour.length; j++ ){
+          tableItem = document.createElement('td');
+          tableItem.textContent = lbsThisHour[j];
+          logRow.appendChild(tableItem);
+      }
     }
   }
 }
@@ -119,29 +139,39 @@ var seattlePubLib = {
     var lbsToGo = Math.floor(this.lbsPerCust * customerNumber);
     var totalLbs = lbsToGo + lbsInCups;
     //console.log('getLbsThisHour: ' + totalLbs);
-    return [totalLbs, customerNumber, cups, lbsInCups, lbsToGo];
+    return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   },
   summarizeDay: function(){
+    var headingsList = ['Time', 'Total Lbs', 'Number of Customers', 'Number of Cups', 'Lbs to-Go']
     var container = document.createElement('div');
     container.className = 'logContainer';
     var title = document.createElement('h3');
     title.textContent = this.name + ': ';
-    // title.className = 'shopTitle';
-    var list = document.createElement('ul');
-    list.className = 'activityLog';
-
     document.body.appendChild(container);
     container.appendChild(title);
-    container.appendChild(list);
-
-    //console.log(this.name + ': ');
+    var table = document.createElement('table');
+    table.className = 'activityLog';
+    var headRow = document.createElement('tr');
+    container.appendChild(table);
+    table.appendChild(headRow);
+    //set up head row
+    for (var i = 0; i < headingsList.length; i++){
+      var tableHead = document.createElement('th')
+      tableHead.textContent = headingsList[i];
+      headRow.appendChild(tableHead);
+    }
+    //set up table body
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
-      var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
-      var listItem = document.createElement('li');
-      listItem.textContent = output;
-      list.appendChild(listItem);
-      //console.log(output);
+      lbsThisHour.unshift(this.hours[i]);
+      var logRow = document.createElement('tr');
+      table.appendChild(logRow);
+
+      for (var j = 0; j < lbsThisHour.length; j++ ){
+          tableItem = document.createElement('td');
+          tableItem.textContent = lbsThisHour[j];
+          logRow.appendChild(tableItem);
+      }
     }
   }
 }
@@ -166,29 +196,39 @@ var southLakeUnion = {
     var lbsToGo = Math.floor(this.lbsPerCust * customerNumber);
     var totalLbs = lbsToGo + lbsInCups;
     //console.log('getLbsThisHour: ' + totalLbs);
-    return [totalLbs, customerNumber, cups, lbsInCups, lbsToGo];
+    return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   },
   summarizeDay: function(){
+    var headingsList = ['Time', 'Total Lbs', 'Number of Customers', 'Number of Cups', 'Lbs to-Go']
     var container = document.createElement('div');
     container.className = 'logContainer';
     var title = document.createElement('h3');
     title.textContent = this.name + ': ';
-    // title.className = 'shopTitle';
-    var list = document.createElement('ul');
-    list.className = 'activityLog';
-
     document.body.appendChild(container);
     container.appendChild(title);
-    container.appendChild(list);
-
-    //console.log(this.name + ': ');
+    var table = document.createElement('table');
+    table.className = 'activityLog';
+    var headRow = document.createElement('tr');
+    container.appendChild(table);
+    table.appendChild(headRow);
+    //set up head row
+    for (var i = 0; i < headingsList.length; i++){
+      var tableHead = document.createElement('th')
+      tableHead.textContent = headingsList[i];
+      headRow.appendChild(tableHead);
+    }
+    //set up table body
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
-      var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
-      var listItem = document.createElement('li');
-      listItem.textContent = output;
-      list.appendChild(listItem);
-      //console.log(output);
+      lbsThisHour.unshift(this.hours[i]);
+      var logRow = document.createElement('tr');
+      table.appendChild(logRow);
+
+      for (var j = 0; j < lbsThisHour.length; j++ ){
+          tableItem = document.createElement('td');
+          tableItem.textContent = lbsThisHour[j];
+          logRow.appendChild(tableItem);
+      }
     }
   }
 }
@@ -213,29 +253,39 @@ var seatac = {
     var lbsToGo = Math.floor(this.lbsPerCust * customerNumber);
     var totalLbs = lbsToGo + lbsInCups;
     //console.log('getLbsThisHour: ' + totalLbs);
-    return [totalLbs, customerNumber, cups, lbsInCups, lbsToGo];
+    return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   },
   summarizeDay: function(){
+    var headingsList = ['Time', 'Total Lbs', 'Number of Customers', 'Number of Cups', 'Lbs to-Go']
     var container = document.createElement('div');
     container.className = 'logContainer';
     var title = document.createElement('h3');
     title.textContent = this.name + ': ';
-    // title.className = 'shopTitle';
-    var list = document.createElement('ul');
-    list.className = 'activityLog';
-
     document.body.appendChild(container);
     container.appendChild(title);
-    container.appendChild(list);
-
-    //console.log(this.name + ': ');
+    var table = document.createElement('table');
+    table.className = 'activityLog';
+    var headRow = document.createElement('tr');
+    container.appendChild(table);
+    table.appendChild(headRow);
+    //set up head row
+    for (var i = 0; i < headingsList.length; i++){
+      var tableHead = document.createElement('th')
+      tableHead.textContent = headingsList[i];
+      headRow.appendChild(tableHead);
+    }
+    //set up table body
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
-      var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]'
-      var listItem = document.createElement('li');
-      listItem.textContent = output;
-      list.appendChild(listItem);
-      //console.log(output);
+      lbsThisHour.unshift(this.hours[i]);
+      var logRow = document.createElement('tr');
+      table.appendChild(logRow);
+
+      for (var j = 0; j < lbsThisHour.length; j++ ){
+          tableItem = document.createElement('td');
+          tableItem.textContent = lbsThisHour[j];
+          logRow.appendChild(tableItem);
+      }
     }
   }
 }
@@ -260,33 +310,45 @@ var website = {
     var lbsToGo = Math.floor(this.lbsPerCust * customerNumber);
     var totalLbs = lbsToGo + lbsInCups;
     //console.log('getLbsThisHour: ' + totalLbs);
-    return [totalLbs, customerNumber, cups, lbsInCups, lbsToGo];
+    return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   },
   summarizeDay: function(){
+    var headingsList = ['Time', 'Total Lbs', 'Number of Customers', 'Number of Cups', 'Lbs to-Go']
     var container = document.createElement('div');
     container.className = 'logContainer';
     var title = document.createElement('h3');
     title.textContent = this.name + ': ';
-    // title.className = 'shopTitle';
-    var list = document.createElement('ul');
-    list.className = 'activityLog';
-
     document.body.appendChild(container);
     container.appendChild(title);
-    container.appendChild(list);
-
-
-    //console.log(this.name + ': ');
+    var table = document.createElement('table');
+    table.className = 'activityLog';
+    var headRow = document.createElement('tr');
+    container.appendChild(table);
+    table.appendChild(headRow);
+    //set up head row
+    for (var i = 0; i < headingsList.length; i++){
+      var tableHead = document.createElement('th')
+      tableHead.textContent = headingsList[i];
+      headRow.appendChild(tableHead);
+    }
+    //set up table body
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
-      var output = this.hours[i] + ': ' + lbsThisHour[0] + ' lbs [' + lbsThisHour[1] + ' customers, ' + lbsThisHour[2] + ' cups (' + lbsThisHour[3] + '), ' + lbsThisHour[4] + ' lbs-to-go ]';
-      var listItem = document.createElement('li');
-      listItem.textContent = output;
-      list.appendChild(listItem);
-      // console.log(output);
+      lbsThisHour.unshift(this.hours[i]);
+      var logRow = document.createElement('tr');
+      table.appendChild(logRow);
+
+      for (var j = 0; j < lbsThisHour.length; j++ ){
+          tableItem = document.createElement('td');
+          tableItem.textContent = lbsThisHour[j];
+          logRow.appendChild(tableItem);
+      }
     }
   }
 }
+
+// website.summarizeDay();
+
 
 
 function writeActivityLog(myLocations){
