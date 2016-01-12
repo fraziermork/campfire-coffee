@@ -7,7 +7,7 @@ function shopLocation (listInput){
   this.poundsPerCup = .05;
   this.hours = ['6:00AM', '7:00AM','8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'];
   this.getCustThisHour = function(){
-    var customerNumber = Math.floor(Math.random()*(this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour);
+    var customerNumber = Math.round(Math.random()*(this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour);
     //console.log('getCustThisHour ' + customerNumber);
     return customerNumber;
   };
