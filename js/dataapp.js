@@ -20,10 +20,10 @@ var capitolHill = {
   },
   getLbsThisHour: function(){
     var customerNumber = this.getCustThisHour();
-    var cups = Math.floor(this.cupsPerCust * customerNumber);
-    var lbsInCups = Math.floor(cups * this.poundsPerCup);
-    var lbsToGo = Math.floor(this.lbsPerCust * customerNumber);
-    var totalLbs = lbsToGo + lbsInCups;
+    var cups = +(this.cupsPerCust * customerNumber).toFixed(1);
+    var lbsInCups = +(cups * this.poundsPerCup).toFixed(1);
+    var lbsToGo = +(this.lbsPerCust * customerNumber).toFixed(1);
+    var totalLbs = +(lbsToGo + lbsInCups).toFixed(1);
     //console.log('getLbsThisHour: ' + totalLbs);
     return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   },
@@ -77,10 +77,10 @@ var pikePlace = {
   },
   getLbsThisHour: function(){
     var customerNumber = this.getCustThisHour();
-    var cups = Math.floor(this.cupsPerCust * customerNumber);
-    var lbsInCups = Math.floor(cups * this.poundsPerCup);
-    var lbsToGo = Math.floor(this.lbsPerCust * customerNumber);
-    var totalLbs = lbsToGo + lbsInCups;
+    var cups = +(this.cupsPerCust * customerNumber).toFixed(1);
+    var lbsInCups = +(cups * this.poundsPerCup).toFixed(1);
+    var lbsToGo = +(this.lbsPerCust * customerNumber).toFixed(1);
+    var totalLbs = +(lbsToGo + lbsInCups).toFixed(1);
     //console.log('getLbsThisHour: ' + totalLbs);
     return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   },
@@ -134,10 +134,10 @@ var seattlePubLib = {
   },
   getLbsThisHour: function(){
     var customerNumber = this.getCustThisHour();
-    var cups = Math.floor(this.cupsPerCust * customerNumber);
-    var lbsInCups = Math.floor(cups * this.poundsPerCup);
-    var lbsToGo = Math.floor(this.lbsPerCust * customerNumber);
-    var totalLbs = lbsToGo + lbsInCups;
+    var cups = +(this.cupsPerCust * customerNumber).toFixed(1);
+    var lbsInCups = +(cups * this.poundsPerCup).toFixed(1);
+    var lbsToGo = +(this.lbsPerCust * customerNumber).toFixed(1);
+    var totalLbs = +(lbsToGo + lbsInCups).toFixed(1);
     //console.log('getLbsThisHour: ' + totalLbs);
     return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   },
@@ -191,10 +191,10 @@ var southLakeUnion = {
   },
   getLbsThisHour: function(){
     var customerNumber = this.getCustThisHour();
-    var cups = Math.floor(this.cupsPerCust * customerNumber);
-    var lbsInCups = Math.floor(cups * this.poundsPerCup);
-    var lbsToGo = Math.floor(this.lbsPerCust * customerNumber);
-    var totalLbs = lbsToGo + lbsInCups;
+    var cups = +(this.cupsPerCust * customerNumber).toFixed(1);
+    var lbsInCups = +(cups * this.poundsPerCup).toFixed(1);
+    var lbsToGo = +(this.lbsPerCust * customerNumber).toFixed(1);
+    var totalLbs = +(lbsToGo + lbsInCups).toFixed(1);
     //console.log('getLbsThisHour: ' + totalLbs);
     return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   },
@@ -248,10 +248,10 @@ var seatac = {
   },
   getLbsThisHour: function(){
     var customerNumber = this.getCustThisHour();
-    var cups = Math.floor(this.cupsPerCust * customerNumber);
-    var lbsInCups = Math.floor(cups * this.poundsPerCup);
-    var lbsToGo = Math.floor(this.lbsPerCust * customerNumber);
-    var totalLbs = lbsToGo + lbsInCups;
+    var cups = +(this.cupsPerCust * customerNumber).toFixed(1);
+    var lbsInCups = +(cups * this.poundsPerCup).toFixed(1);
+    var lbsToGo = +(this.lbsPerCust * customerNumber).toFixed(1);
+    var totalLbs = +(lbsToGo + lbsInCups).toFixed(1);
     //console.log('getLbsThisHour: ' + totalLbs);
     return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   },
@@ -305,10 +305,10 @@ var website = {
   },
   getLbsThisHour: function(){
     var customerNumber = this.getCustThisHour();
-    var cups = Math.floor(this.cupsPerCust * customerNumber);
-    var lbsInCups = Math.floor(cups * this.poundsPerCup);
-    var lbsToGo = Math.floor(this.lbsPerCust * customerNumber);
-    var totalLbs = lbsToGo + lbsInCups;
+    var cups = +(this.cupsPerCust * customerNumber).toFixed(1);
+    var lbsInCups = +(cups * this.poundsPerCup).toFixed(1);
+    var lbsToGo = +(this.lbsPerCust * customerNumber).toFixed(1);
+    var totalLbs = +(lbsToGo + lbsInCups).toFixed(1);
     //console.log('getLbsThisHour: ' + totalLbs);
     return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   },
