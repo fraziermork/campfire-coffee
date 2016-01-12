@@ -9,6 +9,19 @@
 
   <body>
     <section id="target">
+      <div class="addForm" id="addForm">
+        <p>Enter the name of the new location: </p><input type="text" name="newLocationName" id="newLocationName"></input>
+        <p>Enter the minimum number of customers per hour: </p><input type="text" name="newLocationMin" id="newLocationMin"></input>
+        <p>Enter the maximum number of customers per hour: </p><input type="text" name="newLocationMax" id="newLocationMax"></input>
+        <p>Enter the avg cups per customer: </p><input type="text" name="newLocationCups" id="newLocationCups"></input>
+        <p>Enter the avg number of lbs to-go per customer: </p><input type="text" name="newLocationLbs" id="newLocationLbs"></input>
+        <button id="submitNewLocation" onclick="onSubmit()">Add New Location</button>
+      </div>
+
+      <div class="summaryContainer">
+        <table id="summaryTable" ></table>
+        <h2 id="summaryTotal"></h2>
+      </div>
 
     </section>
     <script type="text/javascript" src="js/dataapp.js"></script>
