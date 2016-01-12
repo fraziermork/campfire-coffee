@@ -5,6 +5,7 @@ function shopLocation (listInput){
   this.minCustPerHour = listInput[3];
   this.maxCustPerHour = listInput[4];
   this.poundsPerCup = .05;
+  this.dailyLbs = 0;
   this.hours = ['6:00AM', '7:00AM','8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'];
   this.getCustThisHour = function(){
     var customerNumber = Math.round(Math.random()*(this.maxCustPerHour - this.minCustPerHour) + this.minCustPerHour);
@@ -17,6 +18,7 @@ function shopLocation (listInput){
     var lbsInCups = +(cups * this.poundsPerCup).toFixed(1);
     var lbsToGo = +(this.lbsPerCust * customerNumber).toFixed(1);
     var totalLbs = +(lbsToGo + lbsInCups).toFixed(1);
+    this.dailyLbs += +totalLbs;
     //console.log('getLbsThisHour= ' + totalLbs);
     return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   };
@@ -52,6 +54,9 @@ function shopLocation (listInput){
           logRowEl.appendChild(tableItemEl);
       }
     }
+    var summaryEl = document.createElement('h2');
+    summaryEl.textContent = 'For a total of ' + this.dailyLbs.toFixed(1) + ' pounds today.';
+    containerEl.appendChild(summaryEl);
   }
 }
 
