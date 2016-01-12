@@ -12,6 +12,12 @@
   text-align: center;
 }
 
+.summaryContainer {
+  border: 1px black solid;
+  background-color: #993300;
+  text-align: center;
+}
+
 .indexHeading {
   border: 1px black solid;
   background-color: #993300;

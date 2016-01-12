@@ -1,3 +1,5 @@
+var totalLbsForAllShops = 0;
+
 function shopLocation (listInput){
   this.locName = listInput[0];
   this.cupsPerCust = listInput[1];
@@ -23,7 +25,16 @@ function shopLocation (listInput){
     return [totalLbs, customerNumber, cups + ' (' + lbsInCups + ' lbs)', lbsToGo];
   };
   this.renderActivityLog = function(){
-    var headingsList = ['Time', 'Total Lbs', 'Number of Customers', 'Number of Cups', 'Lbs to-Go']
+    //set up summary table
+    var summaryTableEl = document.getElementById('summaryTable');
+    var summaryRowEl = document.createElement('tr');
+    summaryTableEl.appendChild(summaryRowEl);
+    var summaryRowFirstDatumEl = document.createElement('td');
+    summaryRowFirstDatumEl.innerHTML = '<strong>' + this.locName + '</strong>';
+    summaryRowEl.appendChild(summaryRowFirstDatumEl);
+
+    //set up the individual activity logs
+    var headingsList = ['Time', 'Total Lbs', 'Number of Customers', 'Number of Cups', 'Lbs to-Go'];
     var containerEl = document.createElement('div');
     containerEl.className = 'logContainer';
     var titleEl = document.createElement('h3');
@@ -41,12 +52,15 @@ function shopLocation (listInput){
       tableHeadEl.textContent = headingsList[i];
       headRowEl.appendChild(tableHeadEl);
     }
-    //set up table body
+    //set up table body and summary table body
     for(var i = 0; i < this.hours.length; i++){
       var lbsThisHour = this.getLbsThisHour();
       lbsThisHour.unshift(this.hours[i]);
       var logRowEl = document.createElement('tr');
       table.appendChild(logRowEl);
+      var summaryRowDatumEl = document.createElement('td');
+      summaryRowDatumEl.textContent = lbsThisHour[1];
+      summaryRowEl.appendChild(summaryRowDatumEl);
 
       for (var j = 0; j < lbsThisHour.length; j++ ){
           tableItemEl = document.createElement('td');
@@ -54,26 +68,51 @@ function shopLocation (listInput){
           logRowEl.appendChild(tableItemEl);
       }
     }
-    var summaryEl = document.createElement('h2');
-    summaryEl.textContent = 'For a total of ' + this.dailyLbs.toFixed(1) + ' pounds today.';
-    containerEl.appendChild(summaryEl);
+    var summaryRowLastDatumEl = document.createElement('td');
+    summaryRowLastDatumEl.textContent = this.dailyLbs.toFixed(1);
+    summaryRowEl.appendChild(summaryRowLastDatumEl);
+
+    var totalEl = document.createElement('h2');
+    totalEl.textContent = 'For a total of ' + this.dailyLbs.toFixed(1) + ' pounds today.';
+    containerEl.appendChild(totalEl);
+    return this.dailyLbs;
   }
 }
 
+//set up summary table
+function summarySetUp(){
+  var hours = ['6:00AM', '7:00AM','8:00AM', '9:00AM', '10:00AM','11:00AM', '12 NOON', '1:00PM','2:00PM', '3:00PM', '4:00PM', '5:00PM', '6:00PM', '7:00PM', '8:00PM'];
+  var summaryHeadRowEl = document.createElement('tr');
+  var summaryTableEl = document.getElementById('summaryTable');
+  summaryTableEl.appendChild(summaryHeadRowEl);
+  for (var i = 0; i < hours.length + 2; i++){
+    var summaryTableHeadDatum = document.createElement('td');
+    if (i === hours.length+1) {
+      summaryTableHeadDatum.textContent = 'Totals';
+    } else if (i !== 0){
+      summaryTableHeadDatum.textContent = hours[i-1];
+    }
+    summaryHeadRowEl.appendChild(summaryTableHeadDatum);
+  }
+}
+summarySetUp();
+
+//set up location list and generate location summaries
 var locations = [];
 locations[0] = ['Capitol Hill', 3.2, .4, 32, 48];
 locations[1] = ['Pike Place Market', 1.2, 3.7, 14, 55];
 locations[2] = ['Seattle Public Library', 2.6, .2, 49, 75];
 locations[3] = ['Sea Tac', 1.1, 2.7, 68, 124];
-locations[4] = ['website', 0, 6.7, 3, 6];
-
-
+locations[4] = ['Website', 0, 6.7, 3, 6];
 function writeActivityLog(myLocations){
   for (var i = 0; i < myLocations.length; i++) {
     var locationObject = new shopLocation(myLocations[i]);
     myLocations[i] = locationObject;
-    locationObject.renderActivityLog();
+    totalLbsForAllShops += locationObject.renderActivityLog();
   }
+  var summaryTotal = document.getElementById('summaryTotal');
+  summaryTotal.textContent = 'The total pounds consumed by all shops today is ' + Number(totalLbsForAllShops.toFixed(1)) + " lbs.";
+  console.log('The total for all shops today is:' + totalLbsForAllShops);
   console.dir(myLocations);
 }
 writeActivityLog(locations);
@@ -87,7 +126,9 @@ function onSubmit(){
   var newLbs = +document.getElementById('newLocationLbs').value;
 
   newLocation = new shopLocation([newName, newCups, newLbs, newMin, newMax,]);
-  newLocation.renderActivityLog();
+  totalLbsForAllShops += newLocation.renderActivityLog();
+  var summaryTotal = document.getElementById('summaryTotal');
+  summaryTotal.textContent = 'The total pounds consumed by all shops today is ' + Number(totalLbsForAllShops.toFixed(1)) + " lbs.";
   locations.push(newLocation);
 }
 
