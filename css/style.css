@@ -16,6 +16,8 @@
   border: 1px black solid;
   background-color: #993300;
   text-align: center;
+  width: 100%;
+  clear: both;
 }
 
 .indexHeading {
@@ -26,6 +28,7 @@
 .addForm {
   border: 1px black solid;
   background-color: #993300;
+  clear:both;
 }
 
 body {
