@@ -1,9 +1,47 @@
-/*css here*/
+
 @font-face{
   font-family: 'Open Sans', sans-serif;
   src: url('https://fonts.googleapis.com/css?family=Open+Sans');
 }
 
+
+body {
+  background-color: #440000;
+  color: #FFFFCC;
+  font-family: Open Sans;
+}
+
+ {
+  border: 1px black solid;
+}
+
+/*stuff in the header*/
+header {
+
+  border: 1px black solid;
+  background-color: #993300;
+
+}
+
+.headerContent{
+    background-image: url("img/campsite-tent-night.jpg");
+    border: 1px black solid;
+}
+
+.logo{
+  height: 120px;
+  display: inline-block;
+  position:
+}
+.indexHeading {
+  display: inline-block;
+}
+.slogan{
+  display: inline-block;
+}
+
+
+/*stuff for the activity page*/
 .logContainer {
   border: 1px black solid;
   background-color: #993300;
@@ -20,21 +58,10 @@
   clear: both;
 }
 
-.indexHeading {
-  border: 1px black solid;
-  background-color: #993300;
-}
-
 .addForm {
   border: 1px black solid;
   background-color: #993300;
   clear:both;
-}
-
-body {
-  background-color: #440000;
-  color: #FFFFCC;
-  font-family: Open Sans;
 }
 
 .addForm p {
