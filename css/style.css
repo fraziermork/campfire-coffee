@@ -6,45 +6,16 @@
 
 
 body {
-  background-color: #440000;
+  background-color: #B4AF91;
   color: #FFFFCC;
   font-family: Open Sans;
-}
-
- {
-  border: 1px black solid;
-}
-
-/*stuff in the header*/
-header {
-
-  border: 1px black solid;
-  background-color: #993300;
-
-}
-
-.headerContent{
-    background-image: url("img/campsite-tent-night.jpg");
-    border: 1px black solid;
-}
-
-.logo{
-  height: 120px;
-  display: inline-block;
-  position:
-}
-.indexHeading {
-  display: inline-block;
-}
-.slogan{
-  display: inline-block;
 }
 
 
 /*stuff for the activity page*/
 .logContainer {
   border: 1px black solid;
-  background-color: #993300;
+  background-color: #787746;
   width: 33%;
   display: inline-block;
   text-align: center;
@@ -52,15 +23,27 @@ header {
 
 .summaryContainer {
   border: 1px black solid;
-  background-color: #993300;
+  background-color: #787746;
   text-align: center;
   width: 100%;
   clear: both;
 }
 
+table{
+  border-spacing: 5px;
+}
+
+h3 {
+  background-color: #32331D;
+  color: #C03000;
+}
+h2{
+  color: #32331D;
+}
+
 .addForm {
   border: 1px black solid;
-  background-color: #993300;
+  background-color: #32331D;
   clear:both;
 }
 
