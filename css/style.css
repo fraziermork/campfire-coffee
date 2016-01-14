@@ -4,6 +4,23 @@
   src: url('https://fonts.googleapis.com/css?family=Open+Sans');
 }
 
+header {
+  height: 540px;
+  width: 960px;
+  border: 1px black solid;
+  margin: 10px;
+  color: white;
+}
+.title{
+  padding-left: 20px;
+  font-size: 3em;
+  font-family: Arial, sans-serif;
+}
+.slogan{
+  padding-left: 20px;
+  font-size: 1.5em;
+  font-family: Arial, sans-serif;
+}
 
 body {
   background-color: #B4AF91;
@@ -22,15 +39,17 @@ body {
 }
 
 .summaryContainer {
+  vertical-align: top;
   border: 1px black solid;
   background-color: #787746;
   text-align: center;
-  width: 100%;
+  width: 99.3%;
   clear: both;
 }
 
+
 table{
-  border-spacing: 5px;
+  border-spacing: .1em;
 }
 
 h3 {
