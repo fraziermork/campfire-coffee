@@ -142,14 +142,14 @@ writeActivityLog(locations);
 function onSubmit(event){
   console.log(event);
   event.preventDefault();
-  if (!event.target.parentElement.newLocationName.value || !event.target.parentElement.newLocationMin.value || !event.target.parentElement.newLocationMax.value || !event.target.parentElement.newLocationCups.value || !event.target.parentElement.newLocationLbs.value ){
+  if (!event.target.newLocationName.value || !event.target.newLocationMin.value || !event.target.newLocationMax.value || !event.target.newLocationCups.value || !event.target.newLocationLbs.value ){
     return alert('Fields cannot be empty')
   }
-  var newName = event.target.parentElement.newLocationName.value;
-  var newMin = +event.target.parentElement.newLocationMin.value;
-  var newMax = +event.target.parentElement.newLocationMax.value;
-  var newCups = +event.target.parentElement.newLocationCups.value;
-  var newLbs = +event.target.parentElement.newLocationLbs.value;
+  var newName = event.target.newLocationName.value;
+  var newMin = +event.target.newLocationMin.value;
+  var newMax = +event.target.newLocationMax.value;
+  var newCups = +event.target.newLocationCups.value;
+  var newLbs = +event.target.newLocationLbs.value;
   newLocation = new shopLocation([newName, newCups, newLbs, newMin, newMax,]);
   console.log(newLocation);
 
@@ -160,5 +160,6 @@ function onSubmit(event){
   summaryTotal.textContent = 'The total pounds consumed by all shops today is ' + Number(totalLbsForAllShops.toFixed(1)) + " lbs.";
   locations.push(newLocation);
 }
+
 var storage = document.getElementById("submitForm");
-storage.addEventListener('click', onSubmit);
+storage.addEventListener('submit', onSubmit, true);
