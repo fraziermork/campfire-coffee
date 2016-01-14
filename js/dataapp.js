@@ -137,13 +137,21 @@ writeActivityLog(locations);
 
 //executes on click of submit button for form
 //submits a new store based on information typed into the form at the top, adds log, updates summary
-function onSubmit(){
-  var newName = document.getElementById('newLocationName').value;
-  var newMin = +document.getElementById('newLocationMin').value;
-  var newMax = +document.getElementById('newLocationMax').value;
-  var newCups = +document.getElementById('newLocationCups').value;
-  var newLbs = +document.getElementById('newLocationLbs').value;
+
+
+function onSubmit(event){
+  console.log(event);
+  event.preventDefault();
+  if (!event.target.parentElement.newLocationName.value || !event.target.parentElement.newLocationMin.value || !event.target.parentElement.newLocationMax.value || !event.target.parentElement.newLocationCups.value || !event.target.parentElement.newLocationLbs.value ){
+    return alert('Fields cannot be empty')
+  }
+  var newName = event.target.parentElement.newLocationName.value;
+  var newMin = +event.target.parentElement.newLocationMin.value;
+  var newMax = +event.target.parentElement.newLocationMax.value;
+  var newCups = +event.target.parentElement.newLocationCups.value;
+  var newLbs = +event.target.parentElement.newLocationLbs.value;
   newLocation = new shopLocation([newName, newCups, newLbs, newMin, newMax,]);
+  console.log(newLocation);
 
   //write the activity log for new entry
   totalLbsForAllShops += newLocation.renderActivityLog();
@@ -152,3 +160,5 @@ function onSubmit(){
   summaryTotal.textContent = 'The total pounds consumed by all shops today is ' + Number(totalLbsForAllShops.toFixed(1)) + " lbs.";
   locations.push(newLocation);
 }
+var storage = document.getElementById("submitForm");
+storage.addEventListener('click', onSubmit);
