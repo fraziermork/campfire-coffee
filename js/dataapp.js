@@ -4,8 +4,15 @@ indexHeader.style.backgroundImage = "url(img/campsite-tent-night.jpg)";
 indexHeader.style.backgroundSize = "960px 540px"
 
 
-//only global variable is the totoal amount of pounds consumed by all shops in a day
+//global variables
 var totalLbsForAllShops = 0;
+var newShops = 0;
+var locations = [];
+locations[0] = ['Capitol Hill', 3.2, .4, 32, 48, 'capitolHill'];
+locations[1] = ['Pike Place Market', 1.2, 3.7, 14, 55, 'pikePlace'];
+locations[2] = ['Seattle Public Library', 2.6, .2, 49, 75, 'seattlePubLib'];
+locations[3] = ['Sea Tac', 1.1, 2.7, 68, 124, 'seaTac'];
+locations[4] = ['Website', 0, 6.7, 3, 6, 'website'];
 
 //constructor function for a new shop location
 function shopLocation (listInput){
@@ -49,6 +56,7 @@ function shopLocation (listInput){
     var headingsList = ['Time', 'Total Lbs', 'Number of Customers', 'Number of Cups', 'Lbs to-Go'];
     var containerEl = document.createElement('div'); //the div that contain's this location's log
     containerEl.className = 'logContainer';
+
     document.body.appendChild(containerEl);
     var titleEl = document.createElement('h3'); // the title of this location's log
     titleEl.textContent = this.locName + ': ';
@@ -110,13 +118,7 @@ function summarySetUp(){
 }
 summarySetUp();
 
-//set up location list and generate location summaries
-var locations = [];
-locations[0] = ['Capitol Hill', 3.2, .4, 32, 48];
-locations[1] = ['Pike Place Market', 1.2, 3.7, 14, 55];
-locations[2] = ['Seattle Public Library', 2.6, .2, 49, 75];
-locations[3] = ['Sea Tac', 1.1, 2.7, 68, 124];
-locations[4] = ['Website', 0, 6.7, 3, 6];
+//generate location summaries
 function writeActivityLog(myLocations){
   for (var i = 0; i < myLocations.length; i++) {
     var locationObject = new shopLocation(myLocations[i]);
@@ -140,6 +142,7 @@ writeActivityLog(locations);
 
 
 function onSubmit(event){
+  var rewriteFlag = false;
   console.log(event);
   event.preventDefault();
   if (!event.target.newLocationName.value || !event.target.newLocationMin.value || !event.target.newLocationMax.value || !event.target.newLocationCups.value || !event.target.newLocationLbs.value ){
@@ -150,8 +153,19 @@ function onSubmit(event){
   var newMax = +event.target.newLocationMax.value;
   var newCups = +event.target.newLocationCups.value;
   var newLbs = +event.target.newLocationLbs.value;
-  newLocation = new shopLocation([newName, newCups, newLbs, newMin, newMax,]);
+  //Check to see if the new shop is named the same as an old one
+  for(var i = 0; i < locations.length; i++){
+    if (newName === locations[i].locName){
+      rewriteFlag = true;
+      console.log(rewriteFlag);
+    }
+  }
+
+  newLocation = new shopLocation([newName, newCups, newLbs, newMin, newMax]);
   console.log(newLocation);
+
+
+
 
   //write the activity log for new entry
   totalLbsForAllShops += newLocation.renderActivityLog();
