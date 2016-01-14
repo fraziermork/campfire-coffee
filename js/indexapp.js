@@ -1,3 +1,11 @@
+
+//I tried doing this with CSS using the background-image and background-size things, but it didn't work 
+var indexHeader = document.getElementById('indexHeader');
+indexHeader.style.backgroundImage = "url(img/campsite-tent-night.jpg)";
+indexHeader.style.backgroundSize = "960px 540px"
+
+
+
 // var locationNames = ['Capitol Hill', 'Pike-Place Market', 'Seattle Public Library', 'South Lake Union', 'Sea-Tac Airport'];
 //
 //
@@ -18,6 +26,7 @@
 // }
 //
 // addLocations();
+
 
 
 

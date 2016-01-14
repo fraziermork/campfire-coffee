@@ -1,4 +1,8 @@
 //only global variable is the totoal amount of pounds consumed by all shops in a day
+var indexHeader = document.getElementById('indexHeader');
+indexHeader.style.backgroundImage = "url(img/campsite-tent-night.jpg)";
+indexHeader.style.backgroundSize = "960px 540px"
+
 var totalLbsForAllShops = 0;
 
 //constructor function for a new shop location
