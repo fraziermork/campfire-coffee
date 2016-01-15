@@ -191,7 +191,7 @@ function writeActivityLog(myLocations){
   }
   //write the total amount sold in the bottom of the summary
   var summaryTotal = document.getElementById('summaryTotal');
-  summaryTotal.textContent = '(Running in writeActivityLog) The total pounds consumed by all shops today is ' + Number(totalLbsForAllShops.toFixed(1)) + " lbs.";
+  summaryTotal.textContent = 'The total pounds consumed by all shops today is ' + Number(totalLbsForAllShops.toFixed(1)) + " lbs.";
 }
 writeActivityLog(locations);
 console.log('(Running just after writeActivityLog) This locations array is ');
